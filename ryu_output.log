@@ -1,0 +1,5 @@
+nohup: ignoring input
+loading app ddos_mitigation.py
+loading app ryu.controller.ofp_handler
+instantiating app ddos_mitigation.py of DDoSMitigationApp
+instantiating app ryu.controller.ofp_handler of OFPHandler
