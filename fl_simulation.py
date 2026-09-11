@@ -82,8 +82,8 @@ def client_fn(cid: str) -> fl.client.Client:
     client_id = int(cid) + 1 
     return FlowerClient(client_id=client_id).to_client()
 
-print("🚀 Federated Learning Simulation শুরু হচ্ছে...")
-print("৪টি ক্লায়েন্ট (sw1, sw2, sw3, sw4) সার্ভারের সাথে কানেক্ট করছে...\n")
+print("🚀 Starting Federated Learning Simulation...")
+print("4 clients (sw1, sw2, sw3, sw4) are connecting to the server...\n")
 
 fl.simulation.start_simulation(
     client_fn=client_fn,
@@ -91,4 +91,4 @@ fl.simulation.start_simulation(
     config=fl.server.ServerConfig(num_rounds=3),
 )
 
-print("\n🎉 Federated Learning Training সম্পন্ন হয়েছে!")
+print("\n🎉 Federated Learning Training completed successfully!")
