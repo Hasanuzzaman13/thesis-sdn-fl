@@ -74,11 +74,11 @@ class SDNClient(fl.client.NumPyClient):
                 all_preds.extend(predicted.cpu().numpy())
                 all_labels.extend(labels.cpu().numpy())
         
-        # Loss Fix: ব্যাচ সংখ্যা দিয়ে ভাগ করা হয়েছে
+        # Loss Fix: Divided by the number of batches
         avg_loss = loss / len(self.valloader)
         accuracy = correct / total
         
-        # নতুন মেট্রিক্স: Precision, Recall, F1-Score
+        # New metrics: Precision, Recall, F1-Score
         prec = precision_score(all_labels, all_preds, average='macro', zero_division=0)
         rec = recall_score(all_labels, all_preds, average='macro', zero_division=0)
         f1 = f1_score(all_labels, all_preds, average='macro', zero_division=0)
