@@ -4,7 +4,7 @@ def weighted_average(metrics):
     examples = [n for n, _ in metrics]
     total_examples = sum(examples)
     
-    # সব মেট্রিক্সের ওয়েটেড অ্যাভারেজ বের করা
+    # Calculate the weighted average of all metrics
     agg_metrics = {}
     for key in ["accuracy", "precision", "recall", "f1"]:
         agg_metrics[key] = sum(n * m[key] for n, m in metrics) / total_examples
